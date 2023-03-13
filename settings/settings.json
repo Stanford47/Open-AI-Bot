@@ -1,0 +1,21 @@
+{
+    "Discord" : {
+        "devIds" : [
+            "398758748904226836",
+            "913574723475083274",
+            "808598945374011412",
+            "660882846306795522"
+        ],
+        "appId" : "1084699001871421460",
+        "token" : "MTA4NDY5OTAwMTg3MTQyMTQ2MA.Gz70at.ch-xWF-Hv-JU8JVXbSebhbYnU7EUXac8w6oP7U",
+        "Webhooks" : {
+            "Errors" : {
+                "URL" : "https://discord.com/api/webhooks/1084749772138745866/W9xyYHaPG03QiKs9DZIkV0b9OqeKVXia6GGSjmIbY-nsIkptv3KRws2rYcz7ZqmGzPQK"
+            }
+        }
+    },
+    "OpenAI" : {
+        "organization" : "Bot Thingy",
+        "apiKey" : "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"
+    }
+}

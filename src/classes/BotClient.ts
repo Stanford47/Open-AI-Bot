@@ -48,7 +48,8 @@ export class BotClient {
             if (!command) return;
 
             try {
-                command.execute(interaction as ChatInputCommandInteraction); //silly thing... might just ts-ignore tbh
+                //@ts-ignore
+                command.execute(interaction as ChatInputCommandInteraction, this.startTime); //silly thing... might just ts-ignore tbh
             } catch (err) {
                 interaction.reply({ content: `There has been an error while running the command \`${interaction.commandName}\`\nError\`\`\`\n${err}\`\`\``, ephemeral: true });
 

@@ -1,4 +1,4 @@
-import { botClient } from "..";
+import { HttpRequest } from "../classes/HttpReq";
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 
 export default {

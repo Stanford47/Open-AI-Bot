@@ -1,19 +1,16 @@
+"use strict";
 // import settings from "../../settings/settings.json";
 // import * as child_process from "child_process";
 // import * as https from "https";
 // import HTTPReq from "../interfaces/HttpReq";
 // import { OutgoingHttpHeader } from "http";
-
 // function parseURL(inURL: string): string[] {
 //     let urlArr: string[] = new Array();
 //     let url = new URL(inURL);
-
 //     urlArr[0] = url.hostname;
 //     urlArr[1] = url.pathname;
-
 //     return urlArr;
 // }
-
 // /**
 //  * 
 //  * @param URL The FULL URL
@@ -30,24 +27,19 @@
 //         headers: {},
 //         method: method
 //     };
-
 //     let output: string;
-
 //     const req = https.request(reqOptions, (res) => {
 //         //debug stuff
 //         console.log("Host:\t\001b[38;5;159m%s\001b[0m\nResponse Code:\t\001b[108m%d\001b[0m", reqOptions.hostname, res.statusCode);
-
 //         res.setEncoding("utf-8");
-
 //         res.on('data', (chunk) => {
 //             output += chunk;
 //         });
-
 //         res.on('end', () => {
 //             retObj.data = JSON.parse(output);
 //             retObj.statusCode = res.statusCode;
 //         });
 //     });
-
 //     if (data === undefined) { }
 // }
+//# sourceMappingURL=request.js.map

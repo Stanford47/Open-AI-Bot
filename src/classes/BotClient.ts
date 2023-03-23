@@ -1,7 +1,7 @@
 import { Client, ChatInputCommandInteraction, Collection, Interaction, REST, ApplicationCommandDataResolvable, Routes, Events } from "discord.js";
 import { readdirSync } from "fs";
 import { join } from "path";
-import settings from "../../settings/settings.json";
+import settings from "../../settings/settings.json"
 import sendErr from "../utils/sendErr";
 import Command from "../interfaces/Command";
 

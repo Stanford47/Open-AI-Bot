@@ -5,8 +5,8 @@ export default {
     .setName("destroy")
     .setDescription("Gives Chat GPT a prompt to respond to"),
 
-    execute(interaction: ChatInputCommandInteraction) {
-        interaction.reply("goodbye!!!");
+    async execute(interaction: ChatInputCommandInteraction) {
+        await interaction.reply("goodbye!!!");
 
         interaction.client.destroy();
         process.exit();

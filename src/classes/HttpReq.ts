@@ -1,45 +1,31 @@
-import { request } from "https";
+import fetch, { Headers } from "node-fetch";
 import settings from "../../settings/settings.json";
 import HttpReturn from "../interfaces/HttpRequestRetrun";
 
 export class HttpRequest {
-    private Url: URL;
+    private Url: string;
     private headers: Object;
     private method: string;
     private data: JSON | undefined | string;
 
-    constructor(fullUrl: string, headers: object, method: string, data?: JSON | string) {
-        this.Url = new URL(fullUrl);
+    constructor(fullUrl: string, headers: Object, method: string, data?: JSON | string) {
+        this.Url = fullUrl;
         this.headers = headers;
         this.method = method;
-        this.data = data
+        this.data = data;
     }
 
     public showValues(): string {
         return `URL:\t${this.Url}\nHeaders:\t${this.headers}\nMethod:\t${this.method}\n`;
     }
 
-    public printReturnValues() { }
-
-    public async makeHttpRequest(): Promise<HttpReturn> {
-        const reqOptions: Object = {
-            hostname: this.Url.hostname,
-            path: this.Url.pathname,
+    public makeHttpRequest(): JSON {
+        fetch(this.Url, {
             method: this.method,
-            headers: this.headers,
-            data: this.data
-        }
-        const req = request(reqOptions, (res) => {
-            let tempData: string = "";
-            res.setEncoding("utf-8");
-
-            res.on("data", (chunk) => tempData += chunk);
+            headers: new Headers(this.headers),
             
-            res.on("end", () => {
-
-            });
         });
 
-        return requestReturn;
+        return JSON.parse("");
     }
 }

@@ -45,7 +45,7 @@ export class BotClient {
       const command = await import(join(__dirname, "..", "commands", file));
 
       console.log(
-        `\u001b[38;5;11mLoaded command:\t\u001b[4m\u001b[38;5;46m${command.name}\u001b[0m`
+        `\u001b[38;5;11mLoaded command:\t\u001b[4m\u001b[38;5;46m${command.default.data.name}\u001b[0m`
       );
 
         this.slashCommands.push(command.default.data);

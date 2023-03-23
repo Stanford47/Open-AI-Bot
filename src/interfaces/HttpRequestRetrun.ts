@@ -1,4 +1,4 @@
 export default interface HttpReturn {
-    data: JSON;
+    data: JSON | string ;
     statusCode: number | undefined;
 }

@@ -1,7 +1,7 @@
 "use strict";
 //@ts-check
 
-const cp = require("child_process");
+import * as cp from "child_process";
 
 const ARGS = process.argv;
 const PLATFORM = process.platform;

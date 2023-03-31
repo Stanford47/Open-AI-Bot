@@ -1,31 +1,38 @@
-import fetch, { Headers } from "node-fetch";
-import settings from "../../settings/settings.json";
-import HttpReturn from "../interfaces/HttpRequestRetrun";
+import fetch from "node-fetch";
 
 export class HttpRequest {
-    private Url: string;
-    private headers: Object;
+    private Url: string; 
+    private headers: Array<string>;
     private method: string;
-    private data: JSON | undefined | string;
+    private data: JSON | undefined;
 
-    constructor(fullUrl: string, headers: Object, method: string, data?: JSON | string) {
+    constructor(fullUrl: string, headers: Array<string>, method: string, data?: JSON) {
         this.Url = fullUrl;
-        this.headers = headers;
         this.method = method;
         this.data = data;
+        this.headers = headers;
+
     }
 
     public showValues(): string {
         return `URL:\t${this.Url}\nHeaders:\t${this.headers}\nMethod:\t${this.method}\n`;
     }
 
-    public makeHttpRequest(): JSON {
-        fetch(this.Url, {
-            method: this.method,
-            headers: new Headers(this.headers),
-            
-        });
+    public async makeHttpRequest(): Promise<JSON | unknown> {
+        const response = await fetch(
+            this.Url,
+            {
+                method: this.method,
+                body: this.data === undefined ? null : JSON.stringify(this.data),
+                headers: 
+                {
+                    "Content-Type" : "application/json",
+                    "Authorization" : `Bearer ${this.headers[0]}`
+                }
+            }
+        )
 
-        return JSON.parse("");
+
+        return response.json();
     }
 }

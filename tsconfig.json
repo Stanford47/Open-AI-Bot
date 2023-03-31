@@ -11,7 +11,7 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "noPropertyAccessFromIndexSignature": false,
-        "module": "commonjs",
+        "module": "ESNext",
         "sourceMap": true,
     },
     "include": ["settings/settings.json", "src/**/*.ts", "start.ts"]

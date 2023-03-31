@@ -13,19 +13,15 @@ export default {
     async execute(interaction: ChatInputCommandInteraction) {
         await interaction.deferReply({ ephemeral: true });
 
-        const request = new HttpRequest(
-            "https://api.openai.com/v1/chat/completions",
-            {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${settings.OpenAI.apiKey}`
-            },
+        const prompt = interaction.options.getString("prompt", true);
+
+        const req = await new HttpRequest(
+            "https://api.openai.com/v1/chat/completions", 
+            [settings.OpenAI.apiKey], 
             "POST",
-            `{
-                "model": "gpt-3.5-turbo",
-                "messages": [{"role": "user", "content": "Hello!"}]
-            }`
+            JSON.parse(`{'model':'gpt-3.5-turbo','messages':[{'role':'user','content':${prompt}}]}`)
         ).makeHttpRequest();
 
-        interaction.editReply("pls work");
+        interaction.editReply(JSON.stringify(req));
     }
 }

@@ -1,0 +1,1 @@
+find ./dist/src >> ./scripts/tmp/DIST_JS_FILE_LIST.txt
